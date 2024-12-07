@@ -8,4 +8,5 @@ print(s)
 serie.name='nombre'
 #Definimos una serie con columnas
 df=pd.DataFrame({'Columna 1':[1,2,3,4],'Columna 2':['a','b','c','d']})
+#Esto es una prueba para actualizar
 print(df)
