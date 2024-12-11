@@ -56,7 +56,6 @@ print(sum(data3)) #Obtener la sumatoria
 print(floor(mean(data3))) #Para obtener la media con rendondeo
 print(mode(data3))
 print(multimode(data3))
-
 #La función map no sirve para encontrar todas aquellos valores que se encuentran perdidos
 print(str(sum(map(isnan,data4))))
 print("La media de los valores flotantes o decimales de data2 es:"+str(round(fmean(data2))))
