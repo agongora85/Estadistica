@@ -1,7 +1,7 @@
 #Definimos los módulos a importar
 import pandas as pd
 #Definimos las funciones a utilizar
-from statistics import median,mean,mode,multimode,fmean
+from statistics import median,mean,mode,multimode,fmean,geometric_mean,harmonic_mean,median_low,median_high,median_grouped,quantiles
 from math import isnan,floor
 #Definimos una serie simple numérica
 serie=pd.Series([1,2,3])
@@ -48,6 +48,8 @@ print("Nivel de avance de todos los proyectos "+str(round((sum(a["Proyectos conc
 data2=[20.7,15,63.25,142.14]
 data3=[10,52,10,63,87,63,10,63]
 data4=[5,float('NaN'),58,96,36,float('NaN'),74]
+data5 = [2, 5, 3, 4, 8, 9]
+data6 = [105, 129, 87, 86, 111, 111, 89, 81, 108, 92, 110,100, 75, 105, 103, 109, 76, 119, 99, 91, 103, 129,106, 101, 84, 111, 74, 87, 86, 103, 103, 106, 86,111, 75, 87, 102, 121, 111, 88, 89, 101, 106, 95,103, 107, 101, 81, 109, 104]
 
 print(sorted(data2))
 print(sorted(data2,key=None,reverse=True))
@@ -59,3 +61,11 @@ print(multimode(data3))
 #La función map no sirve para encontrar todas aquellos valores que se encuentran perdidos
 print(str(sum(map(isnan,data4))))
 print("La media de los valores flotantes o decimales de data2 es:"+str(round(fmean(data2))))
+print("La media geométrica de los datos es: "+str(round(geometric_mean(data2))))
+print("La media armónica es de los datos es:"+str(round(harmonic_mean(data2))))
+#La mediana baja es siempre un valor presente en el conjunto de datos. Cuando el número de casos es impar, se retorna el valor central. Cuando el número de casos es par, se retorna el menor de los dos valores centrales.
+print("La mediana baja de los dato es: "+str(round(median_low(data2))))
+print("La mediana alta es: "+str(round(median_high(data2))))
+print("La media agrupada es:"+str((median_grouped(data5))))
+[round(q,1) for q in quantiles(data6,n=10)]
+print(data6)
